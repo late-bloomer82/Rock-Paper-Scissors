@@ -1,6 +1,9 @@
-//Function that gets the computer to make a random choice between rock papers and scissors
+
 //Creating an array that contains all possible choices and that can be accessed from anywhere
 const words = ["Rock", "Paper", "Scissors"];
+
+
+//Function that gets the computer to make a random choice between rock papers and scissors
 function getComputerChoice() {
 
 
@@ -12,82 +15,99 @@ function getComputerChoice() {
     return choice;
 }
 
- let playerWinCount;
- let computerWinCount
+//Declaring two variables representing the game score.
+ let playerWinCount= 0;
+ let computerWinCount= 0;
+
+ let rock = "Rock";
+ let paper = "Paper";
+ let scissors = "Scissors";
+ 
 
 
- function playRound(getComputerSelection, getPlayerSelection) {
-    getComputerSelection(getComputerChoice);
-    getPlayerSelection = prompt("Make your choice : ")
+ function playRound() {
+    let computerSelection = getComputerChoice();
+    let playerSelection = prompt("Make your choice : ")
 
     //There should be 9 different combinations possible.
 
     //Rock vs Rock
-    if (getPlayerSelection === words[0] && getComputerSelection === words[0]) {
+    if (playerSelection.toLowerCase() === rock.toLowerCase() && computerSelection === words[0]) {
         console.log("Draw, both players chose Rock.")
 
     }
     //Paper vs Paper
-    if (getPlayerSelection === words[1] && getComputerSelection === words[1]) {
+    else if (playerSelection.toLowerCase() === paper.toLowerCase() && computerSelection === words[1]) {
         console.log("Draw, both players chose Paper.")
 
     }
     //Scissors vs Scissors
-    if (getPlayerSelection === words[2] && getComputerSelection === words[2]) {
+    else if (playerSelection.toLowerCase() === scissors.toLowerCase() && computerSelection === words[2]) {
         console.log("Draw, both players chose Scissors.")
 
     }
     //PLayer Rock vs Paper
-    if (getPlayerSelection === words[0] && getComputerSelection === words[1]) {
+    else if (playerSelection.toLowerCase() === rock.toLowerCase() && computerSelection === words[1]) {
         console.log("You lose! Computer chose Paper.")
         computerWinCount++
 
     }
     // Player Rock vs Scissors
-    if (getPlayerSelection === words[0] && getComputerSelection === words[2]) {
-        console.log("You win! Computer chose Scissors.")
+    else if (playerSelection.toLowerCase() === rock.toLowerCase() && computerSelection === words[2]) {
+        console.log("You win this round! Computer chose Scissors.")
         playerWinCount++
     }
     //Player Paper vs Rock
-    if (getPlayerSelection === words[1] && getComputerSelection === words[0]) {
+    else if (playerSelection.toLowerCase() ===paper.toLowerCase() && computerSelection === words[0]) {
         console.log("You win! Computer chose Rock")
         playerWinCount++
     }
     //Player Paper vs Scissors
-    if (getPlayerSelection === words[1] && getComputerSelection === words[2]) {
+    else if (playerSelection.toLowerCase() === paper.toLowerCase() && computerSelection === words[2]) {
         console.log("You lose! Computer chose Scissors.")
         computerWinCount++
     }
     //Player Scissors vs Rock
-    if (getPlayerSelection === words[2] && getComputerSelection === words[0]) {
+    else if (playerSelection.toLowerCase() === scissors.toLowerCase() && computerSelection === words[0]) {
         console.log("You lose! Computer chose Rock.")
         computerWinCount++
     }
     //Player Scissors vs Paper
-    if (getPlayerSelection === words[2] && getComputerSelection === words[1]) {
+    else if (playerSelection.toLowerCase() === scissors.toLowerCase() && computerSelection === words[1]) {
         console.log("You win! Computer chose Paper.")
         playerWinCount++
 
     }
+    else {
+        
+        console.log("Invalid input. Please choose between Rock, Paper or Scissors.")
+    }
 
-    console.log(playerWinCount)
-    console.log(computerWinCount)
-    
+    console.log("Player : " + playerWinCount)
+    console.log("Computer : " + computerWinCount)
     
 
 }
 
 function game() {
     for (i = 0; i < 5; i++) {
-        console.log(playRound(getComputerChoice, getPlayerSelection))
-        if(computerWinCount ==5){
-            console.log("Computer wins.")
+        playRound()
+        
+        if(i==4 && computerWinCount >= playerWinCount){
+            console.log("Unlucky! Computer wins.")
 
         }
-        if(p==5){
-            console.log("Player One wins!")
+
+        else if(i==4 && computerWinCount <= playerWinCount){
+            console.log("Congratulations! You win.")
         }
+        else if(i==4 && computerWinCount === playerWinCount){
+            console.log("Wow! Game ends in a draw.")
+        }
+        
     }
 }
+alert("Let's play a Rock Paper Scissors game!")
+game();
 
 

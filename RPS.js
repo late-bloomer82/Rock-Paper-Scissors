@@ -23,66 +23,47 @@ function getComputerChoice() {
  let paper = "Paper";
  let scissors = "Scissors";
  
+ let rockButton = document.getElementById("Rock");
+ let paperButton = document.getElementById("Paper");
+ let scissorsButton = document.getElementById("Scissors");
+ let resultsDiv = document.querySelector(".results")
 
+ //Rock vs Rock
+ rockImage.addEventListener("click", function(){
+    if(getComputerChoice === words[0]){
+        resultsDiv.textContent = "Draw! You both chose rock."
+    }
+
+ })
+ rockImage.addEventListener("click", function(){
+    if(getComputerChoice === words[1]){
+        resultsDiv.textContent = "You lose! Player 2 picked paper."
+    }
+
+ })
+ rockImage.addEventListener("click", function(){
+    if(getComputerChoice === words[2]){
+        resultsDiv.textContent = "You win! Player 2 picked scissors."
+    }
+
+ })
+ rockImage.addEventListener("click", function(){
+    if(getComputerChoice === words[0]){
+        resultsDiv.textContent = "Draw! You both chose paper."
+    }
+
+ })
 
  function playRound() {
-    let computerSelection = getComputerChoice();
-    let playerSelection = prompt("Make your choice : ")
+    
+    
 
-    //There should be 9 different combinations possible.
+  
 
-    //Rock vs Rock
-    if (playerSelection.toLowerCase() === rock.toLowerCase() && computerSelection === words[0]) {
-        console.log("Draw, both players chose Rock.")
+  
 
-    }
-    //Paper vs Paper
-    else if (playerSelection.toLowerCase() === paper.toLowerCase() && computerSelection === words[1]) {
-        console.log("Draw, both players chose Paper.")
-
-    }
-    //Scissors vs Scissors
-    else if (playerSelection.toLowerCase() === scissors.toLowerCase() && computerSelection === words[2]) {
-        console.log("Draw, both players chose Scissors.")
-
-    }
-    //PLayer Rock vs Paper
-    else if (playerSelection.toLowerCase() === rock.toLowerCase() && computerSelection === words[1]) {
-        console.log("You lose! Computer chose Paper.")
-        computerWinCount++
-
-    }
-    // Player Rock vs Scissors
-    else if (playerSelection.toLowerCase() === rock.toLowerCase() && computerSelection === words[2]) {
-        console.log("You win this round! Computer chose Scissors.")
-        playerWinCount++
-    }
-    //Player Paper vs Rock
-    else if (playerSelection.toLowerCase() ===paper.toLowerCase() && computerSelection === words[0]) {
-        console.log("You win! Computer chose Rock")
-        playerWinCount++
-    }
-    //Player Paper vs Scissors
-    else if (playerSelection.toLowerCase() === paper.toLowerCase() && computerSelection === words[2]) {
-        console.log("You lose! Computer chose Scissors.")
-        computerWinCount++
-    }
-    //Player Scissors vs Rock
-    else if (playerSelection.toLowerCase() === scissors.toLowerCase() && computerSelection === words[0]) {
-        console.log("You lose! Computer chose Rock.")
-        computerWinCount++
-    }
-    //Player Scissors vs Paper
-    else if (playerSelection.toLowerCase() === scissors.toLowerCase() && computerSelection === words[1]) {
-        console.log("You win! Computer chose Paper.")
-        playerWinCount++
-
-    }
-    else {
-        
-        console.log("Invalid input. Please choose between Rock, Paper or Scissors.")
-    }
-
+    
+    
     console.log("Player : " + playerWinCount)
     console.log("Computer : " + computerWinCount)
     
@@ -107,7 +88,7 @@ function game() {
         
     }
 }
-alert("Let's play a Rock Paper Scissors game!")
-game();
+// alert("Let's play a Rock Paper Scissors game!")
+// game();
 
 

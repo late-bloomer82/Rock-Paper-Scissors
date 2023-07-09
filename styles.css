@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+  }
+html{
+   height:100%;
+   width: 100%;
+}
+body{
+    height:100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #3c3c3c;
+}
+
+
+h1{
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+}
+.rpsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.rpsImages{
+    display: flex;
+    gap: 50px
+}
+
+.rockDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.paperDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scissorsDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#Rock{
+    display: flex;
+    margin-top: 10px;
+    width: fit-content;
+    height: fit-content;
+   
+}
+
+#Paper{
+    display: flex;
+    margin-top: 10px;
+    width: fit-content;
+    height: fit-content;
+   
+}
+
+#Scissors{
+    display: flex;
+    margin-top: 10px;
+    width: fit-content;
+    height: fit-content;
+   
+}

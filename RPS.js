@@ -26,36 +26,225 @@ function getComputerChoice() {
  let rockButton = document.getElementById("Rock");
  let paperButton = document.getElementById("Paper");
  let scissorsButton = document.getElementById("Scissors");
- let resultsDiv = document.querySelector(".results")
+ let resultsDiv = document.querySelector(".results");
+ let endgameDiv = document.querySelector(".endgame");
 
- //Rock vs Rock
- rockImage.addEventListener("click", function(){
-    if(getComputerChoice === words[0]){
-        resultsDiv.textContent = "Draw! You both chose rock."
+
+ 
+
+ function playRound(){
+
+
+
+
+ rockButton.addEventListener("click", function(){
+    if(getComputerChoice() === words[0]){
+      
+        resultsDiv.innerHTML = "Draw!" + "<br>Player : " + playerWinCount  + "<br>Computer : " + computerWinCount
     }
-
- })
- rockImage.addEventListener("click", function(){
-    if(getComputerChoice === words[1]){
-        resultsDiv.textContent = "You lose! Player 2 picked paper."
-    }
-
- })
- rockImage.addEventListener("click", function(){
-    if(getComputerChoice === words[2]){
-        resultsDiv.textContent = "You win! Player 2 picked scissors."
-    }
-
- })
- rockImage.addEventListener("click", function(){
-    if(getComputerChoice === words[0]){
-        resultsDiv.textContent = "Draw! You both chose paper."
-    }
-
- })
-
- function playRound() {
+    if(computerWinCount === 5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML= "Unlucky! Computer wins."
+       
+       
     
+
+    }
+    else if(playerWinCount===5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML = "You win!"
+    }
+        
+
+ })
+ rockButton.addEventListener("click", function(){
+    if(getComputerChoice() === words[1]){
+        computerWinCount++
+        resultsDiv.innerHTML ="You lose! Computer picked paper." + "<br>Player : " + playerWinCount  + "<br>Computer : " + computerWinCount
+        
+    }
+    if(computerWinCount === 5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML= "Unlucky! Computer wins."
+        
+
+    }
+    else if(playerWinCount===5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML = "You win!"
+    }
+
+ })
+ rockButton.addEventListener("click", function(){
+    if(getComputerChoice() === words[2]){
+        playerWinCount++
+        resultsDiv.innerHTML = "You win! Computer picked scissors." + "<br>Player : " + playerWinCount  + "<br>Computer : " + computerWinCount
+      
+    }
+    if(computerWinCount === 5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML= "Unlucky! Computer wins."
+
+    }
+    else if(playerWinCount===5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML = "You win!"
+    }
+
+ })
+ paperButton.addEventListener("click", function(){
+    if(getComputerChoice() === words[0]){
+        playerWinCount++
+        resultsDiv.innerHTML ="You win! Computer picked rock." + "<br>Player : " + playerWinCount  + "<br>Computer : " + computerWinCount
+       
+    }
+    if(computerWinCount === 5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML= "Unlucky! >bComputer wins."
+
+    }
+    else if(playerWinCount===5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML = "You win!"
+    }
+
+ })
+
+paperButton.addEventListener("click", function(){
+    if(getComputerChoice() === words[1]){
+        
+        resultsDiv.innerHTML = "Draw!" + "<br>Player : " + playerWinCount  + "<br>Computer : " + computerWinCount
+    
+    }
+    if(computerWinCount === 5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML= "Unlucky! Computer wins."
+
+    }
+    else if(playerWinCount===5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML = "You win!"
+    }
+
+})
+paperButton.addEventListener("click", function(){
+    if(getComputerChoice() === words[2]){
+        computerWinCount++
+        resultsDiv.innerHTML ="You lose! Computer picked scissors." + "<br>Player : " + playerWinCount  + "<br>Computer : " + computerWinCount
+        
+    }
+    if(computerWinCount === 5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML= "Unlucky! Computer wins."
+       
+
+    }
+    else if(playerWinCount===5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML = "You win!"
+        
+    }
+
+})
+
+scissorsButton.addEventListener("click", function(){
+    if(getComputerChoice() === words[0]){
+        computerWinCount++
+        resultsDiv.innerHTML = "You lose! Computer picked rock." + "<br>Player : " + playerWinCount  + "<br>Computer : " + computerWinCount
+    }
+    if(computerWinCount === 5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML= "Unlucky! Computer wins."
+        
+
+    }
+    else if(playerWinCount===5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML = "You win!"
+    
+    }
+})
+
+scissorsButton.addEventListener("click", function(){
+    if(getComputerChoice() === words[1]){
+        playerWinCount++
+        resultsDiv.innerHTML ="You win! Computer picked paper." + "<br>Player : " + playerWinCount  + "<br>Computer : " + computerWinCount
+        
+    }
+    if(computerWinCount === 5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML= "Unlucky! Computer wins."
+        
+    }
+    else if(playerWinCount===5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML = "You win!"
+    }
+        
+})
+
+scissorsButton.addEventListener("click", function(){
+    if(getComputerChoice() === words[2]){
+        
+        resultsDiv.innerHTML = "Draw!" + "<br>Player : " + playerWinCount  + "<br>Computer : " + computerWinCount
+        
+    }
+    if(computerWinCount === 5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML= "Unlucky! Computer wins."
+        
+
+    }
+    else if(playerWinCount===5){
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+        return endgameDiv.innerHTML = "You win!"
+        
+    }
+})
+
+}
+
+
+playRound()
+
+
+   
     
 
   
@@ -63,32 +252,17 @@ function getComputerChoice() {
   
 
     
-    
-    console.log("Player : " + playerWinCount)
-    console.log("Computer : " + computerWinCount)
-    
+ 
+   
 
-}
 
-function game() {
-    for (i = 0; i < 5; i++) {
-        playRound()
+
+
         
-        if(i==4 && computerWinCount >= playerWinCount){
-            console.log("Unlucky! Computer wins.")
-
-        }
-
-        else if(i==4 && computerWinCount <= playerWinCount){
-            console.log("Congratulations! You win.")
-        }
-        else if(i==4 && computerWinCount === playerWinCount){
-            console.log("Wow! Game ends in a draw.")
-        }
         
-    }
-}
-// alert("Let's play a Rock Paper Scissors game!")
-// game();
+    
+
+alert("Let's play a Rock Paper Scissors game!")
+
 
 
